@@ -1,6 +1,12 @@
 //! ReduxToolkit написання стору
 import { configureStore } from "@reduxjs/toolkit";
-import { tasksReducer, filtersReducer} from "./reducer";
+
+//!======================== Before =================================
+//? import { tasksReducer, filtersReducer} from "./reducer";
+
+//!======================= After ===================================
+import { tasksReducer } from './tasksSlice';
+import { filtersReducer } from './filtersSlice';
 
 export const store = configureStore({
   reducer: {

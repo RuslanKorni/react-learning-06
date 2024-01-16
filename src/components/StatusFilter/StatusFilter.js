@@ -1,16 +1,16 @@
-import { Button } from 'components/Button/Button';
-import css from './StatusFilter.module.css';
-import { useSelector, useDispatch } from 'react-redux';
-import { statusFilters } from '../../redux/constants';
-import { getStatusFilter } from '../../redux/selectors';
-import { setStatusFilter } from '../../redux/actions';
+import { useSelector, useDispatch } from "react-redux";
+import { Button } from "components/Button/Button";
+import { statusFilters } from "../../redux/constants";
+import { getStatusFilter } from "../../redux/selectors";
+import { setStatusFilter } from "../../redux/filtersSlice";
+import css from "./StatusFilter.module.css";
 
 export const StatusFilter = () => {
-  // Отримуємо значення фільтра із стану Redux
-  const filter = useSelector(getStatusFilter);
   const dispatch = useDispatch();
+  const filter = useSelector(getStatusFilter);
 
   const handleFilterChange = filter => dispatch(setStatusFilter(filter));
+
   return (
     <div className={css.wrapper}>
       <Button
